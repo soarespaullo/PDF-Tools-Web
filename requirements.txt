@@ -1,0 +1,6 @@
+Flask
+PyMuPDF
+pdf2docx
+PyPDF2
+python-pptx
+Pillow
