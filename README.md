@@ -46,6 +46,8 @@ git clone https://github.com/soarespaullo/PDF-Tools-Web.git
 pip install -r requirements.txt --break-system-packages
 ```
 
+---
+
 ## ▶️ Como Usar
 
 ### Inicie o servidor Flask
