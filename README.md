@@ -33,21 +33,30 @@ Uma aplicação web simples e intuitiva para manipulação de arquivos PDF, dese
 
 ## 🚀 Instalação
 
-```bash
-# Clone o repositório
+```
+### Clone o repositório
+
+```
 git clone https://github.com/seuusuario/pdf-tools.git
 cd pdf-tools
+```
+### Crie e ative um ambiente virtual (opcional mas recomendado)
 
-# Crie e ative um ambiente virtual (opcional mas recomendado)
+```
 python -m venv venv
 source venv/bin/activate  # ou venv\Scripts\activate no Windows
+```
 
-# Instale as dependências
+### Instale as dependências
+
+```
 pip install -r requirements.txt
+```
 
 ## ▶️ Como Usar
 
 ### Inicie o servidor Flask
+
 ```
 python app.py
 ```
