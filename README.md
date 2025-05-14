@@ -39,12 +39,6 @@ Uma aplicação web simples e intuitiva para manipulação de arquivos PDF, dese
 ```
 git clone https://github.com/soarespaullo/PDF-Tools-Web.git
 ```
-### Crie e ative um ambiente virtual (opcional mas recomendado)
-
-```
-python -m venv venv
-source venv/bin/activate  # ou venv\Scripts\activate no Windows
-```
 
 ### Instale as dependências
 
