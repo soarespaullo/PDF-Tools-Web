@@ -38,7 +38,6 @@ Uma aplicação web simples e intuitiva para manipulação de arquivos PDF, dese
 
 ```
 git clone https://github.com/seuusuario/pdf-tools.git
-cd pdf-tools
 ```
 ### Crie e ative um ambiente virtual (opcional mas recomendado)
 
