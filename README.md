@@ -138,8 +138,8 @@ Pillow
 
 ## 🧾 Licença
 
-MIT License
+[`MIT License`](https://github.com/soarespaullo/PDF-Tools-Web/blob/main/LICENSE)
 
 ---
 
-Feito com ❤️ por [Seu Nome] – Pull Requests são bem-vindos!
+Feito com ❤️ por [Paulo Soares](https://soarespaullo.github.io/) – Pull Requests são bem-vindos!
