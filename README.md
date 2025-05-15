@@ -14,7 +14,7 @@ Este projeto é uma aplicação Flask para manipulação de arquivos PDF. Ela pe
 ## 📁 Estrutura de Pastas
 
 ```
-meu_app/
+PDFTools/
 ├── app.py
 ├── app.wsgi
 ├── requirements.txt
@@ -51,7 +51,7 @@ sudo apt install apache2 libapache2-mod-wsgi-py3 python3-venv
 ### 2. Crie o ambiente virtual e instale os requisitos:
 
 ```bash
-cd /var/www/meu_app
+cd /var/www/PDFTools
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -69,7 +69,7 @@ from app import app as application
 
 ### 4. Configure o Apache:
 
-Crie o arquivo `/etc/apache2/sites-available/meu_app.conf`:
+Crie o arquivo `/etc/apache2/sites-available/PDFTools.conf`:
 
 ```apache
 <VirtualHost *:80>
@@ -103,8 +103,8 @@ sudo systemctl reload apache2
 ### 6. Permissões (importantíssimo):
 
 ```bash
-sudo chown -R www-data:www-data /var/www/meu_app/uploads /var/www/meu_app/results
-sudo chmod -R 755 /var/www/meu_app
+sudo chown -R www-data:www-data /var/www/meu_app/uploads /var/www/PDFTools/results
+sudo chmod -R 755 /var/www/PDFTools
 ```
 
 ---
