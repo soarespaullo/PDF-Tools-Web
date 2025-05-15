@@ -23,9 +23,6 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['RESULT_FOLDER'] = 'results'
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB
 
-os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-os.makedirs(app.config['RESULT_FOLDER'], exist_ok=True)
-
 def salvar_arquivo(arquivo):
     if arquivo and arquivo.filename:
         nome_seguro = secure_filename(arquivo.filename)
@@ -237,5 +234,5 @@ def jpg_para_pdf():
         return redirect('/')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
 
