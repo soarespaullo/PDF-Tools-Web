@@ -1,197 +1,177 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manipulação de PDF</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <style>
-    body {
-      background: #f8f9fa;
-    }
-    .card {
-      border: none;
-      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-      transition: transform 0.2s ease-in-out;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card-body i {
-      color: #0d6efd;
-    }
-    footer {
-      background: #212529;
-      color: white;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Ferramentas de PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
 </head>
 <body>
+  <header>
+    <h1><i class="ri-heart-fill" style="color: var(--accent); margin-right: 0.4rem;"></i> Ferramentas online para manipulação de PDF</h1>
+    <p>Converta, edite e proteja seus PDFs com facilidade</p>
+  </header>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#"><i class="fas fa-toolbox"></i> PDF Tools</a>
-  </div>
-</nav>
-
-<header class="bg-primary text-white text-center py-5">
-  <div class="container">
-    <h1 class="display-5">Ferramentas Online para Manipular PDF</h1>
-    <p class="lead">Simples, rápido e gratuito</p>
-  </div>
-</header>
-
-<div class="container my-5">
-  
-  <!-- Mensagens Flash do Flask -->
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        {{ messages[0] }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <main>
+    <section class="tools">
+      <div class="card">
+        <i class="ri-stack-line"></i>
+        <h3>Juntar PDF</h3>
+        <p>Combine vários PDFs.</p>
+        <form action="/juntar" method="POST" enctype="multipart/form-data">
+          <input type="file" name="pdfs" accept="application/pdf" multiple required />
+          <button class="btn" type="submit">Juntar</button>
+        </form>
       </div>
-    {% endif %}
-  {% endwith %}
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-
-    <!-- Cada bloco abaixo foi atualizado com campos required -->
-
-    <!-- Juntar PDF -->
-    <div class="col">
-      <div class="card text-center h-100 p-3">
-        <div class="card-body">
-          <i class="fas fa-file-pdf fa-2x"></i>
-          <h5 class="card-title mt-3">Juntar PDF</h5>
-          <p class="card-text">Combine vários arquivos PDF em um único documento.</p>
-          <form action="/juntar" method="POST" enctype="multipart/form-data">
-            <input type="file" name="pdfs" multiple accept="application/pdf" class="form-control mb-2" required>
-            <button type="submit" class="btn btn-outline-primary w-100">Juntar Agora</button>
-          </form>
-        </div>
+      <div class="card">
+        <i class="ri-scissors-line"></i>
+        <h3>Dividir PDF</h3>
+        <p>Separe um PDF em páginas.</p>
+        <form action="/dividir" method="POST" enctype="multipart/form-data">
+          <input type="file" name="pdf" accept="application/pdf" required />
+          <button class="btn" type="submit">Dividir</button>
+        </form>
       </div>
+
+      <div class="card">
+        <i class="ri-folder-zip-line"></i>
+        <h3>Comprimir PDF</h3>
+        <p>Reduza o tamanho do PDF.</p>
+        <form action="/comprimir" method="POST" enctype="multipart/form-data">
+          <input type="file" name="pdf" accept="application/pdf" required />
+          <button class="btn" type="submit">Comprimir</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <i class="ri-lock-line"></i>
+        <h3>Proteger PDF</h3>
+        <p>Adicione senha ao PDF.</p>
+        <form action="/proteger" method="POST" enctype="multipart/form-data">
+          <input type="file" name="pdf" accept="application/pdf" required />
+          <input type="text" name="senha" placeholder="Senha" required />
+          <button class="btn" type="submit">Proteger</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <i class="ri-lock-unlock-line"></i>
+        <h3>Desbloquear PDF</h3>
+        <p>Remova senha do PDF.</p>
+        <form action="/desbloquear" method="POST" enctype="multipart/form-data">
+          <input type="file" name="pdf" accept="application/pdf" required />
+          <input type="text" name="senha" placeholder="Senha atual" required />
+          <button class="btn" type="submit">Desbloquear</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <i class="ri-code-s-slash-line"></i>
+        <h3>HTML para PDF</h3>
+        <p>Converta código HTML em PDF.</p>
+        <form action="/html_para_pdf" method="POST">
+          <textarea name="html" rows="4" placeholder="Cole o HTML aqui" required></textarea>
+          <button class="btn" type="submit">Converter</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <i class="ri-contrast-drop-line"></i>
+        <h3>Marca d'água</h3>
+        <p>Adicione texto sobre o PDF.</p>
+        <form action="/marca_dagua" method="POST" enctype="multipart/form-data">
+          <input type="file" name="pdf" accept="application/pdf" required />
+          <input type="text" name="texto" placeholder="Texto da marca" required />
+          <button class="btn" type="submit">Aplicar</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <i class="ri-image-line"></i>
+        <h3>PDF para JPG</h3>
+        <p>Transforme páginas em imagens.</p>
+        <form action="/pdf_para_jpg" method="POST" enctype="multipart/form-data">
+          <input type="file" name="pdf" accept="application/pdf" required />
+          <button class="btn" type="submit">Converter</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <i class="ri-file-image-line"></i>
+        <h3>JPG para PDF</h3>
+        <p>Transforme imagens em PDF.</p>
+        <form action="/jpg_para_pdf" method="POST" enctype="multipart/form-data">
+          <input type="file" name="imagens" accept="image/*" multiple required />
+          <button class="btn" type="submit">Converter</button>
+        </form>
+      </div>
+      
+	<div class="card">
+	  <i class="ri-file-word-line"></i>
+	  <h3>PDF para Word</h3>
+	  <p>Converta arquivos PDF para documentos Word editáveis.</p>
+	  <form action="/pdf_para_word" method="POST" enctype="multipart/form-data">
+	    <input type="file" name="pdf" accept="application/pdf" required />
+	    <button class="btn" type="submit">Converter</button>
+	  </form>
+	</div>
+
+	<div class="card">
+	  <i class="ri-file-excel-line"></i>
+	  <h3>PDF para Excel</h3>
+	  <p>Extraia tabelas e dados do PDF para Excel.</p>
+	  <form action="/pdf_para_excel" method="POST" enctype="multipart/form-data">
+	    <input type="file" name="pdf" accept="application/pdf" required />
+	    <button class="btn" type="submit">Converter</button>
+	  </form>
+	</div>
+
+	<div class="card">
+	  <i class="ri-file-ppt-line"></i>
+	  <h3>PDF para PowerPoint</h3>
+	  <p>Transforme páginas do PDF em slides PowerPoint.</p>
+	  <form action="/pdf_para_ppt" method="POST" enctype="multipart/form-data">
+	    <input type="file" name="pdf" accept="application/pdf" required />
+	    <button class="btn" type="submit">Converter</button>
+	  </form>
+	</div>
+
+      <div class="card">
+        <i class="ri-eye-line"></i>
+        <h3>OCR PDF</h3>
+        <p>Extraia texto de PDF com OCR.</p>
+        <form action="/ocr_pdf" method="POST" enctype="multipart/form-data">
+          <input type="file" name="pdf" accept="application/pdf" required />
+          <button class="btn" type="submit">Executar OCR</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social">
+      <a href="#"><i class="ri-github-fill"></i></a>
+      <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+      <a href="#"><i class="ri-instagram-line"></i></a>
+      <a href="#"><i class="ri-twitter-x-line"></i></a>
     </div>
+    <p>© 2025 Ferramentas PDF. Todos os direitos reservados.</p>
+  </footer>
 
-    <!-- Dividir PDF -->
-    <div class="col">
-      <div class="card text-center h-100 p-3">
-        <div class="card-body">
-          <i class="fas fa-cut fa-2x"></i>
-          <h5 class="card-title mt-3">Dividir PDF</h5>
-          <p class="card-text">Divida seu PDF em várias partes menores.</p>
-          <form action="/dividir" method="POST" enctype="multipart/form-data">
-            <input type="file" name="pdf" accept="application/pdf" class="form-control mb-2" required>
-            <button type="submit" class="btn btn-outline-primary w-100">Dividir Agora</button>
-          </form>
-        </div>
-      </div>
-    </div>
+  <!-- Botão de Doação -->
+  <a href="https://paypal.me/seulink" id="donateBtn" target="_blank" rel="noopener" aria-label="Doar para o projeto">
+    <i class="ri-heart-fill"></i>
+  </a>
 
-    <!-- Comprimir PDF -->
-    <div class="col">
-      <div class="card text-center h-100 p-3">
-        <div class="card-body">
-          <i class="fas fa-compress fa-2x"></i>
-          <h5 class="card-title mt-3">Comprimir PDF</h5>
-          <p class="card-text">Reduza o tamanho do arquivo PDF.</p>
-          <form action="/comprimir" method="POST" enctype="multipart/form-data">
-            <input type="file" name="pdf" accept="application/pdf" class="form-control mb-2" required>
-            <button type="submit" class="btn btn-outline-primary w-100">Comprimir Agora</button>
-          </form>
-        </div>
-      </div>
-    </div>
+  <!-- Botão do modo escuro -->
+  <button id="toggleDarkMode" aria-label="Alternar modo escuro">
+    <i class="ri-moon-line"></i>
+  </button>
 
-    <!-- PDF para Word -->
-    <div class="col">
-      <div class="card text-center h-100 p-3">
-        <div class="card-body">
-          <i class="fas fa-file-word fa-2x"></i>
-          <h5 class="card-title mt-3">PDF para Word</h5>
-          <p class="card-text">Converta PDF para documento do Word (.docx).</p>
-          <form action="/pdf_para_word" method="POST" enctype="multipart/form-data">
-            <input type="file" name="pdf" accept="application/pdf" class="form-control mb-2" required>
-            <button type="submit" class="btn btn-outline-primary w-100">Converter</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- PDF para PowerPoint -->
-    <div class="col">
-      <div class="card text-center h-100 p-3">
-        <div class="card-body">
-          <i class="fas fa-file-powerpoint fa-2x"></i>
-          <h5 class="card-title mt-3">PDF para PowerPoint</h5>
-          <p class="card-text">Converta PDF para apresentação PowerPoint (.pptx).</p>
-          <form action="/pdf_para_ppt" method="POST" enctype="multipart/form-data">
-            <input type="file" name="pdf" accept="application/pdf" class="form-control mb-2" required>
-            <button type="submit" class="btn btn-outline-primary w-100">Converter</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Editar PDF -->
-    <div class="col">
-      <div class="card text-center h-100 p-3">
-        <div class="card-body">
-          <i class="fas fa-pen-to-square fa-2x"></i>
-          <h5 class="card-title mt-3">Editar PDF</h5>
-          <p class="card-text">Edite o conteúdo de seu arquivo PDF.</p>
-          <form action="/editar" method="POST" enctype="multipart/form-data">
-            <input type="file" name="pdf" accept="application/pdf" class="form-control mb-2" required>
-            <textarea name="texto" class="form-control mb-2" placeholder="Novo conteúdo a inserir no PDF" required></textarea>
-            <button type="submit" class="btn btn-outline-primary w-100">Editar Agora</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Proteger PDF -->
-    <div class="col">
-      <div class="card text-center h-100 p-3">
-        <div class="card-body">
-          <i class="fas fa-lock fa-2x"></i>
-          <h5 class="card-title mt-3">Proteger PDF</h5>
-          <p class="card-text">Adicione senha ao seu PDF.</p>
-          <form action="/proteger" method="POST" enctype="multipart/form-data">
-            <input type="file" name="pdf" accept="application/pdf" class="form-control mb-2" required>
-            <input type="password" name="senha" placeholder="Senha" class="form-control mb-2" required>
-            <button type="submit" class="btn btn-outline-primary w-100">Proteger Agora</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Desbloquear PDF -->
-    <div class="col">
-      <div class="card text-center h-100 p-3">
-        <div class="card-body">
-          <i class="fas fa-lock-open fa-2x"></i>
-          <h5 class="card-title mt-3">Desbloquear PDF</h5>
-          <p class="card-text">Remova a senha de um PDF protegido.</p>
-          <form action="/desbloquear" method="POST" enctype="multipart/form-data">
-            <input type="file" name="pdf" accept="application/pdf" class="form-control mb-2" required>
-            <input type="password" name="senha" placeholder="Senha atual" class="form-control mb-2" required>
-            <button type="submit" class="btn btn-outline-primary w-100">Desbloquear Agora</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<footer class="text-center py-4">
-  <div class="container">
-    <p class="mb-1">&copy; 2025 Todos os direitos reservados.</p>
-    <p class="mb-0">Desenvolvido por <strong>Seu Nome</strong></p>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/scripts.js"></script>
 </body>
 </html>
 

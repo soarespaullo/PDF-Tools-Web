@@ -1,6 +1,12 @@
 Flask
-PyMuPDF
-pdf2docx
 PyPDF2
-python-pptx
+pdf2image
+pytesseract
+fpdf
 Pillow
+pdf2docx
+weasyprint
+pdfplumber
+pandas
+openpyxl
+python-pptx
