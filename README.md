@@ -1,4 +1,4 @@
-# 🛠️ PDF-Tools-Web
+# 🛠️ PDF-Tools
 
 Este projeto é uma aplicação Flask para manipulação de arquivos PDF. Ela permite:
 
