@@ -99,14 +99,14 @@ Crie o arquivo `/etc/apache2/sites-available/PDFTools.conf`:
 ### 5. Ative o site e reinicie o Apache:
 
 ```bash
-sudo a2ensite meu_app
+sudo a2ensite PDFTools
 sudo systemctl reload apache2
 ```
 
 ### 6. Permissões (importantíssimo):
 
 ```bash
-sudo chown -R www-data:www-data /var/www/meu_app/uploads /var/www/PDFTools/results
+sudo chown -R www-data:www-data /var/www/PDFTools/uploads /var/www/PDFTools/results
 sudo chmod -R 755 /var/www/PDFTools
 ```
 
