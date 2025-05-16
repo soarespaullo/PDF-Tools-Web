@@ -61,9 +61,13 @@ pip install -r requirements.txt
 
 ```python
 #!/usr/bin/python3
-import sys, logging, os
+import sys
+import logging
+import os
+
 logging.basicConfig(stream=sys.stderr)
-sys.path.insert(0, "/var/www/meu_app")
+sys.path.insert(0, '/var/www/PDFTools')
+
 from app import app as application
 ```
 
@@ -73,23 +77,22 @@ Crie o arquivo `/etc/apache2/sites-available/PDFTools.conf`:
 
 ```apache
 <VirtualHost *:80>
-    ServerName seusite.com
+    ServerName localhost
+    WSGIDaemonProcess PDFTools python-path=/var/www/PDFTools:/var/www/PDFTools/venv/lib/python3.10/site-packages
+    WSGIProcessGroup PDFTools
+    WSGIScriptAlias / /var/www/PDFTools/app.wsgi
 
-    WSGIDaemonProcess meu_app python-path=/var/www/meu_app:/var/www/meu_app/venv/lib/python3.10/site-packages
-    WSGIProcessGroup meu_app
-    WSGIScriptAlias / /var/www/meu_app/app.wsgi
-
-    Alias /static/ /var/www/meu_app/static/
-    <Directory /var/www/meu_app/static/>
+    <Directory /var/www/PDFTools>
         Require all granted
     </Directory>
 
-    <Directory /var/www/meu_app/>
+    Alias /static /var/www/PDFTools/static
+    <Directory /var/www/PDFTools/static/>
         Require all granted
     </Directory>
 
-    ErrorLog ${APACHE_LOG_DIR}/meu_app_error.log
-    CustomLog ${APACHE_LOG_DIR}/meu_app_access.log combined
+    ErrorLog ${APACHE_LOG_DIR}/PDFTools_error.log
+    CustomLog ${APACHE_LOG_DIR}/PDFTools_access.log combined
 </VirtualHost>
 ```
 
