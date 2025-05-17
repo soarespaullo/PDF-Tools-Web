@@ -31,7 +31,7 @@ PDFTools/
 
 ---
 
-## 🚀 Rodando localmente (desenvolvimento)
+## 🚀 Rodando localmente (Desenvolvimento)
 
 ```bash
 python3 -m venv venv
@@ -44,7 +44,7 @@ Acesse em: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## 🏗️ Deploy em servidor Apache (produção)
+## 🏗️ Deploy em servidor Apache (Produção)
 
 ### 1. Instale dependências:
 
