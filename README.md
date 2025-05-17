@@ -24,7 +24,10 @@ PDFTools/
 ├── app.wsgi
 ├── requirements.txt
 ├── templates/
+│   └── index.html
 ├── static/
+│   ├── style.css
+│   └── script.js
 ├── uploads/         # Temporário (entrada)
 ├── results/         # Temporário (saída)
 ```
