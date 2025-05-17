@@ -146,7 +146,7 @@ Pillow
 
 ## 🧾 Licença
 
-Este projeto é licenciado sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/soarespaullo/PDF-Tools-Web/blob/main/LICENSE) para mais detalhes.
+Este projeto é licenciado sob a licença MIT. Veja o arquivo [**LICENSE**](https://github.com/soarespaullo/PDF-Tools-Web/blob/main/LICENSE) para mais detalhes.
 
 ---
 
@@ -154,11 +154,11 @@ Este projeto é licenciado sob a licença MIT. Veja o arquivo [LICENSE](https://
 
 Feito com ❤️ por [**Paulo Soares**](https://soarespaullo.github.io/) – `Pull Requests` são bem-vindos!
 
-- 📧 [soarespaullo@proton.me](mailto:soarespaullo@proton.me)
+- 📧 [**soarespaullo@proton.me**](mailto:soarespaullo@proton.me)
 
-- 💬 [@soarespaullo](https://t.me/soarespaullo) no Telegram
+- 💬 [**@soarespaullo**](https://t.me/soarespaullo) no Telegram
 
-- 💻 [GitHub](https://github.com/soarespaullo)
+- 💻 [**GitHub**](https://github.com/soarespaullo)
 
 ---
 
