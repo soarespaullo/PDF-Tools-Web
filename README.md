@@ -1,4 +1,7 @@
-> ⚠️ **Atenção:** Esta aplicação está em desenvolvimento e pode conter bugs ou comportamentos inesperados.
+## ⚠️ Projeto em Desenvolvimento
+
+> Este projeto ainda está em andamento. Pode haver bugs e funcionalidades incompletas.
+
 
 # 🛠️ PDFTools
 
