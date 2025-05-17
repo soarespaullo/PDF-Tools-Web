@@ -1,3 +1,5 @@
+> ⚠️ **Atenção:** Esta aplicação está em desenvolvimento e pode conter bugs ou comportamentos inesperados.
+
 # 🛠️ PDFTools
 
 Este projeto é uma aplicação Flask para manipulação de arquivos PDF. Ela permite:
