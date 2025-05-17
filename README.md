@@ -151,3 +151,21 @@ Pillow
 ---
 
 Feito com ❤️ por [Paulo Soares](https://soarespaullo.github.io/) – Pull Requests são bem-vindos!
+
+---
+
+## 📚 Referências
+
+- [Flask Documentation](https://flask.palletsprojects.com/) – Micro framework utilizado para criar a aplicação web.
+- [PyPDF2](https://pypdf2.readthedocs.io/) – Manipulação de arquivos PDF (juntar, dividir, proteger, desbloquear).
+- [WeasyPrint](https://weasyprint.org/) – Conversão de HTML/CSS para PDF.
+- [pdf2docx](https://github.com/dothinking/pdf2docx) – Conversão de PDF para arquivos Word (.docx).
+- [pdfplumber](https://github.com/jsvine/pdfplumber) – Extração de tabelas e dados estruturados de PDFs.
+- [python-pptx](https://python-pptx.readthedocs.io/) – Geração de apresentações PowerPoint (.pptx).
+- [pdf2image](https://github.com/Belval/pdf2image) – Conversão de páginas PDF para imagens (usado para OCR e slides).
+- [Pillow (PIL)](https://pillow.readthedocs.io/) – Processamento de imagens em Python.
+- [pytesseract](https://pypi.org/project/pytesseract/) – OCR (Reconhecimento Óptico de Caracteres) via Tesseract.
+- [FPDF](https://pyfpdf.readthedocs.io/) – Geração de arquivos PDF a partir de imagens.
+- [Werkzeug](https://werkzeug.palletsprojects.com/) – Utilizado para upload e segurança de arquivos.
+- [Jinja2](https://jinja.palletsprojects.com/) – Template engine utilizada pelo Flask para renderizar HTML.
+- [OpenPyXL](https://openpyxl.readthedocs.io/) – Escrita de arquivos Excel (.xlsx) com `pandas`.
