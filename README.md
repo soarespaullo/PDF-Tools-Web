@@ -146,15 +146,23 @@ Pillow
 
 ## 🧾 Licença
 
-[`MIT License`](https://github.com/soarespaullo/PDF-Tools-Web/blob/main/LICENSE)
+Este projeto é licenciado sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/soarespaullo/PDF-Tools-Web/blob/main/LICENSE) para mais detalhes.
 
 ---
 
-Feito com ❤️ por [Paulo Soares](https://soarespaullo.github.io/) – Pull Requests são bem-vindos!
+## 👨‍💻 Autor
+
+Feito com ❤️ por [**Paulo Soares**](https://soarespaullo.github.io/) – `Pull Requests` são bem-vindos!
+
+- 📧 [soarespaullo@proton.me](mailto:soarespaullo@proton.me)
+
+- 💬 [@soarespaullo](https://t.me/soarespaullo) no Telegram
+
+- 💻 [GitHub](https://github.com/soarespaullo)
 
 ---
 
-## 📚 Referências
+## 📚 Recursos e Referências
 
 - [Flask Documentation](https://flask.palletsprojects.com/) – Micro framework utilizado para criar a aplicação web.
 - [PyPDF2](https://pypdf2.readthedocs.io/) – Manipulação de arquivos PDF (juntar, dividir, proteger, desbloquear).
