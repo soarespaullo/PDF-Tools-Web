@@ -5,7 +5,7 @@
 
 # 📄 PDFTools
 
-**PDFTools** é uma aplicação web feita com Flask que permite manipular arquivos PDF diretamente no navegador, de forma simples, rápida e sem instalar programas pesados.
+**PDFTools** é uma aplicação web feita com `Flask` que permite manipular arquivos **PDF** diretamente no navegador, de forma simples, rápida e sem instalar programas pesados.
 
 ## ✨ Funcionalidades
 
@@ -20,6 +20,8 @@
   - 📽️ PowerPoint (.pptx)
 - 🧠 **Aplicar OCR (Reconhecimento de Texto)** — Torne PDFs escaneados pesquisáveis.
 - 🖼️ **Converter imagens para PDF** — Transforme arquivos JPG/PNG em PDFs organizados.
+- 💧 **Adicionar Marca D'Água** — Insira marcas d'água personalizadas em documentos PDF.  
+- 📉 **Comprimir PDF** — Reduza o tamanho do arquivo PDF mantendo a qualidade.
 
 ---
 
@@ -203,16 +205,53 @@ Feito com ❤️ por [**Paulo Soares**](https://soarespaullo.github.io/) – `Pu
 
 ## 📚 Recursos e Referências
 
-- [Flask Documentation](https://flask.palletsprojects.com/) – Micro framework utilizado para criar a aplicação web.
-- [PyPDF2](https://pypdf2.readthedocs.io/) – Manipulação de arquivos PDF (juntar, dividir, proteger, desbloquear).
-- [WeasyPrint](https://weasyprint.org/) – Conversão de HTML/CSS para PDF.
-- [pdf2docx](https://github.com/dothinking/pdf2docx) – Conversão de PDF para arquivos Word (.docx).
-- [pdfplumber](https://github.com/jsvine/pdfplumber) – Extração de tabelas e dados estruturados de PDFs.
-- [python-pptx](https://python-pptx.readthedocs.io/) – Geração de apresentações PowerPoint (.pptx).
-- [pdf2image](https://github.com/Belval/pdf2image) – Conversão de páginas PDF para imagens (usado para OCR e slides).
-- [Pillow (PIL)](https://pillow.readthedocs.io/) – Processamento de imagens em Python.
-- [pytesseract](https://pypi.org/project/pytesseract/) – OCR (Reconhecimento Óptico de Caracteres) via Tesseract.
-- [FPDF](https://pyfpdf.readthedocs.io/) – Geração de arquivos PDF a partir de imagens.
-- [Werkzeug](https://werkzeug.palletsprojects.com/) – Utilizado para upload e segurança de arquivos.
-- [Jinja2](https://jinja.palletsprojects.com/) – Template engine utilizada pelo Flask para renderizar HTML.
-- [OpenPyXL](https://openpyxl.readthedocs.io/) – Escrita de arquivos Excel (.xlsx) com `pandas`.
+### 🔗 **Juntar PDFs**
+- **Recurso:** Combine múltiplos PDFs em um único documento.
+- **Tecnologias:** Python (PyPDF2, pdfrw), JavaScript (PDF-lib, pdf.js).
+- **Referência:** [PyPDF2 Documentation](https://pythonhosted.org/PyPDF2/), [PDF-lib GitHub](https://github.com/Hopding/pdf-lib)
+
+### ✂️ **Dividir PDFs**
+- **Recurso:** Separe páginas específicas de um PDF em arquivos individuais.
+- **Tecnologias:** Python (PyPDF2, pikepdf), JavaScript (PDF-lib).
+- **Referência:** [pikepdf Documentation](https://pikepdf.readthedocs.io/), [PDF-lib GitHub](https://github.com/Hopding/pdf-lib)
+
+### 🔒 **Proteger PDF com senha**
+- **Recurso:** Adicione senha para proteger documentos sensíveis.
+- **Tecnologias:** Python (PyPDF2), JavaScript (PDF-lib).
+- **Referência:** [PyPDF2 - Encrypt PDF](https://pythonhosted.org/PyPDF2/PyPDF2.pdf), [PDF-lib GitHub](https://github.com/Hopding/pdf-lib)
+
+### 🔓 **Desbloquear PDF**
+- **Recurso:** Remova a senha de arquivos protegidos (quando permitido).
+- **Tecnologias:** Python (PyPDF2), JavaScript (pdf.js).
+- **Referência:** [PyPDF2 Decrypt PDF](https://pythonhosted.org/PyPDF2/PyPDF2.pdf), [pdf.js GitHub](https://github.com/mozilla/pdf.js)
+
+### 🌐 **Converter HTML para PDF**
+- **Recurso:** Gere um PDF a partir de código HTML ou páginas web.
+- **Tecnologias:** Python (pdfkit, weasyprint), JavaScript (Puppeteer).
+- **Referência:** [WeasyPrint Documentation](https://weasyprint.readthedocs.io/), [pdfkit Documentation](https://pdfkit.org/)
+
+### 🔁 **Converter PDF para:**
+- **Recurso:** Converta arquivos PDF para outros formatos como Word, Excel e PowerPoint.
+- **Tecnologias:** Python (pdf2docx, xlwings), JavaScript (pdf-lib).
+- **Referência:** [pdf2docx GitHub](https://github.com/modesty/pdf2docx), [xlwings Documentation](https://www.xlwings.org/)
+
+### 🧠 **Aplicar OCR (Reconhecimento de Texto)**
+- **Recurso:** Torne PDFs escaneados pesquisáveis.
+- **Tecnologias:** Python (Tesseract, pytesseract), JavaScript (OCR.js).
+- **Referência:** [Tesseract OCR Documentation](https://tesseract-ocr.github.io/), [OCR.js GitHub](https://github.com/odyniec/ocrad.js)
+
+### 🖼️ **Converter Imagens para PDF**
+- **Recurso:** Transforme arquivos JPG/PNG em PDFs organizados.
+- **Tecnologias:** Python (Pillow, FPDF), JavaScript (jsPDF).
+- **Referência:** [Pillow Documentation](https://pillow.readthedocs.io/), [jsPDF GitHub](https://github.com/parallax/jsPDF)
+
+### 💧 **Adicionar Marca D'Água**
+- **Recurso:** Insira marcas d'água personalizadas em documentos PDF.
+- **Tecnologias:** Python (PyPDF2, reportlab), JavaScript (PDF-lib).
+- **Referência:** [PyPDF2 - Add Watermark](https://pythonhosted.org/PyPDF2/), [PDF-lib GitHub](https://github.com/Hopding/pdf-lib)
+
+### 📉 **Comprimir PDF**
+- **Recurso:** Reduza o tamanho do arquivo PDF mantendo a qualidade.
+- **Tecnologias:** Python (pikepdf, PyPDF2), JavaScript (pdf-lib).
+- **Referência:** [pikepdf Documentation](https://pikepdf.readthedocs.io/), [PyPDF2 Compress PDF](https://pythonhosted.org/PyPDF2/)
+
