@@ -20,16 +20,33 @@ Este projeto é uma aplicação Flask para manipulação de arquivos PDF. Ela pe
 
 ```
 PDFTools/
-├── app.py
-├── app.wsgi
-├── requirements.txt
-├── templates/
-│   └── index.html
-├── static/
-│   ├── style.css
-│   └── script.js
-├── uploads/         # Temporário (entrada)
-├── results/         # Temporário (saída)
+├── app.py                      # Arquivo principal da aplicação Flask
+├── app.wsgi                    # Script WSGI usado pelo servidor (ex: Apache + mod_wsgi)
+├── requirements.txt            # Arquivo com as dependências do projeto (pip install -r)
+│
+├── templates/                  # Templates Jinja2 renderizados pelo Flask
+│   ├── base.html               # Template base (navbar, footer, etc.)
+│   ├── index.html              # Página inicial
+│   ├── comprimido.html         # Página de resultado para PDFs comprimidos
+│   ├── desbloqueado.html       # Resultado de PDFs desbloqueados
+│   ├── download.html           # Página de download de múltiplos arquivos
+│   ├── download_unico.html     # Página de download individual
+│   ├── paginas_convertidas.html # Resultados de PDFs convertidos para imagens, etc.
+│   ├── paginas_divididas.html  # Resultado de divisão de PDF em páginas
+│   ├── protegido.html          # Resultado de PDFs protegidos
+│
+├── static/                     # Arquivos estáticos (CSS, JS, imagens)
+│   ├── css/
+│   │   ├── style.css           # Estilos principais globais
+│   │   └── download.css        # Estilos específicos para páginas de download
+│   │
+│   ├── js/
+│   │   └── darkmode.js         # Script para alternar entre modo claro e escuro
+│   │
+│   └── favicon/                # Ícones para aba do navegador (favicon.ico, etc.)
+│
+├── uploads/                    # Pasta onde os arquivos enviados são armazenados temporariamente
+├── results/                    # Pasta com os arquivos gerados (PDFs comprimidos, convertidos, etc.)
 ```
 
 ---
