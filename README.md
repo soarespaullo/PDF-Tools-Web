@@ -3,16 +3,23 @@
 > Este projeto ainda está em andamento. Pode haver bugs e funcionalidades incompletas.
 
 
-# 🛠️ PDFTools
+# 📄 PDFTools
 
-Este projeto é uma aplicação Flask para manipulação de arquivos PDF. Ela permite:
+**PDFTools** é uma aplicação web feita com Flask que permite manipular arquivos PDF diretamente no navegador, de forma simples, rápida e sem instalar programas pesados.
 
-- Juntar e dividir PDFs
-- Proteger e desbloquear com senha
-- Converter HTML para PDF
-- Converter PDF para Word, Excel, PowerPoint
-- Fazer OCR em PDFs
-- Converter imagens (JPG/PNG) para PDF
+## ✨ Funcionalidades
+
+- 🔗 **Juntar PDFs** — Combine múltiplos arquivos PDF em um único documento.
+- ✂️ **Dividir PDFs** — Separe páginas específicas de um PDF em arquivos individuais.
+- 🔒 **Proteger PDF com senha** — Adicione senha para proteger documentos sensíveis.
+- 🔓 **Desbloquear PDF** — Remova a senha de arquivos protegidos (quando permitido).
+- 🌐 **Converter HTML para PDF** — Gere um PDF a partir de código ou páginas HTML.
+- 🔁 **Converter PDF para:**
+  - 📄 Word (.docx)
+  - 📊 Excel (.xlsx)
+  - 📽️ PowerPoint (.pptx)
+- 🧠 **Aplicar OCR (Reconhecimento de Texto)** — Torne PDFs escaneados pesquisáveis.
+- 🖼️ **Converter imagens para PDF** — Transforme arquivos JPG/PNG em PDFs organizados.
 
 ---
 
