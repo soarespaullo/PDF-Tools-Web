@@ -187,7 +187,7 @@ werkzeug
 
 ## 🧾 Licença
 
-Este projeto é licenciado sob a licença `MIT`. Veja o arquivo [**LICENSE**](https://github.com/soarespaullo/PDF-Tools-Web/blob/main/LICENSE) para mais detalhes.
+Este projeto é licenciado sob a licença `MIT`. Veja o arquivo [**LICENSE**](https://github.com/soarespaullo/PDFTools/blob/main/LICENSE) para mais detalhes.
 
 ---
 
