@@ -157,16 +157,21 @@ sudo chmod -R 755 /var/www/PDFTools
 
 ```txt
 Flask
-PyPDF2
+PyMuPDF
 pdf2docx
+PyPDF2
+python-pptx
+Pillow
+weasyprint
 pdfplumber
+poppler-utils
 pandas
 openpyxl
-weasyprint
-python-pptx
 pdf2image
+reportlab
+fpdf
 pytesseract
-Pillow
+werkzeug
 ```
 
 ---
