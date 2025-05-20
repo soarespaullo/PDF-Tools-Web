@@ -275,44 +275,65 @@ def proteger_pdf():
 # Rota para desbloquear PDF
 @app.route('/desbloquear', methods=['POST'])
 def desbloquear_pdf():
+    # Obtém o arquivo PDF enviado pelo formulário
     file = request.files['pdf']
+    # Obtém a senha fornecida pelo usuário
     senha = request.form['senha']
 
+    # Garante um nome de arquivo seguro
     filename = secure_filename(file.filename)
+    # Caminho onde o arquivo será salvo temporariamente
     input_path = os.path.join(UPLOAD_FOLDER, filename)
+    # Define o nome do arquivo de saída (desbloqueado)
     output_filename = f"desbloqueado_{filename}"
+    # Caminho onde o arquivo desbloqueado será salvo
     output_path = os.path.join(RESULT_FOLDER, output_filename)
 
+    # Salva o arquivo enviado na pasta de uploads
     file.save(input_path)
+    # Cria o leitor do PDF
     reader = PyPDF2.PdfReader(input_path)
 
+    # Verifica se o PDF está criptografado
     if reader.is_encrypted:
         try:
-            # Tenta descriptografar o PDF
+            # Tenta desbloquear com a senha fornecida
             if not reader.decrypt(senha):
+                # Se a senha estiver incorreta ou falhar, exibe mensagem e retorna
                 flash("❌ Senha incorreta ou falha ao desbloquear.")
                 return redirect('/')
             
-            # Tenta acessar as páginas para verificar se foi desbloqueado
-            _ = reader.pages[0]  # isso forçará o erro se não estiver realmente desbloqueado
+            # Acessa a primeira página para verificar se o desbloqueio foi bem-sucedido
+            _ = reader.pages[0]  # isso força erro se o PDF ainda estiver criptografado
 
         except FileNotDecryptedError:
+            # Caso específico de falha na descriptografia
             flash("❌ Senha incorreta. O PDF não pôde ser desbloqueado.")
             return redirect('/')
         except Exception as e:
+            # Qualquer outro erro é capturado aqui
             flash(f"❌ Erro ao processar o PDF: {str(e)}")
             return redirect('/')
 
-    writer = PyPDF2.PdfWriter()
-    for page in reader.pages:
-        writer.add_page(page)
+        # Se tudo deu certo até aqui, cria um novo PDF desbloqueado
+        writer = PyPDF2.PdfWriter()
+        # Adiciona todas as páginas ao novo PDF
+        for page in reader.pages:
+            writer.add_page(page)
 
-    with open(output_path, 'wb') as f:
-        writer.write(f)
+        # Escreve o novo PDF desbloqueado na pasta de resultados
+        with open(output_path, 'wb') as f:
+            writer.write(f)
 
-    flash("✅ PDF desbloqueado com sucesso!")
-    return render_template('desbloqueado.html', filename=output_filename)
-
+        # Informa ao usuário que o processo foi bem-sucedido
+        flash("✅ PDF desbloqueado com sucesso!")
+        return render_template('desbloqueado.html', filename=output_filename)
+    
+    else:
+        # Caso o PDF não esteja criptografado, avisa o usuário
+        flash("ℹ️ Este PDF não está bloqueado.")
+        return redirect('/')
+        
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
 # Rota para converter HTML para PDF
