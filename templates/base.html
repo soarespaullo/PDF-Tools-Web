@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}PDFTools{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <header>
+    <h1><i class="ri-file-pdf-line"></i> PDFTools</h1>
+    <p>Converta, edite e proteja seus PDFs com facilidade</p>
+  </header>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div id="flash-container">
+      {% for msg in messages %}
+        <div class="flash-message">
+          {{ msg }}
+          <span class="close-btn" onclick="this.parentElement.remove();">&times;</span>
+        </div>
+      {% endfor %}
+    </div>
+    <script>
+      setTimeout(() => {
+        const flash = document.getElementById("flash-container");
+        if (flash) flash.remove();
+      }, 6000); // some automaticamente após 6 segundos
+    </script>
+  {% endif %}
+{% endwith %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <div class="social">
+      <a href="https://github.com/soarespaullo" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i></a>
+      <a href="https://www.linkedin.com/in/soarespaullo/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-box-fill"></i></a>
+      <a href="https://soarespaullo.github.io/" target="_blank" rel="noopener noreferrer"><i class="ri-global-line"></i></a>
+      <a href="https://t.me/soarespaullo" target="_blank" rel="noopener noreferrer"><i class="ri-telegram-line"></i></a>
+    </div>
+    <p>© 2025 PDFTools. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
+

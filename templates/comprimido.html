@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}PDF Comprimido - PDFTools{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/download.css') }}">
+{% endblock %}
+
+{% block content %}
+
+  <div class="download-container">
+    <h1>📦 PDF Comprimido</h1>
+
+    <p>Seu arquivo foi comprimido com sucesso.</p>
+
+    <a class="button" href="{{ url_for('baixar_pdf', filename=filename) }}" download>
+      ⬇️ Baixar Arquivo Comprimido
+    </a>
+
+    <a class="back-link" href="{{ url_for('index') }}">← Voltar para a página inicial</a>
+  </div>
+{% endblock %}
+

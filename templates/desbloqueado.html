@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}PDF Desbloqueado - PDFTools{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/download.css') }}">
+{% endblock %}
+
+{% block content %}
+  <div class="download-container">
+    <h1>🔓 PDF desbloqueado com sucesso</h1>
+
+    <a class="button" href="{{ url_for('baixar_pdf', filename=filename) }}" download>
+      ⬇️ Baixar PDF desbloqueado
+    </a>
+
+    <a class="back-link" href="{{ url_for('index') }}">← Voltar para a página inicial</a>
+  </div>
+{% endblock %}
+
