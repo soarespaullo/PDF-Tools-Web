@@ -51,61 +51,93 @@ def index():
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-# Rota responsável por juntar os arquivos PDF enviados
+# Rota que processa os arquivos enviados pelo formulário para juntar PDFs
 @app.route('/juntar', methods=['POST'])
 def juntar_pdf():
-    # Obtém a lista de arquivos enviados pelo formulário com o name="pdfs"
+    # Obtém todos os arquivos enviados no campo "pdfs" (com multiple no HTML)
     arquivos = request.files.getlist("pdfs")
 
-    # Cria um objeto PdfMerger para juntar os PDFs
+    # Cria o objeto responsável por juntar os PDFs
     merger = PyPDF2.PdfMerger()
 
-    # Itera sobre cada arquivo enviado
+    # Contador de PDFs válidos
+    pdfs_validos = 0
+
+    # Lista para armazenar os nomes dos arquivos inválidos
+    arquivos_invalidos = []
+
+    # Percorre cada arquivo enviado
     for file in arquivos:
-        # Verifica se o arquivo existe e se tem a extensão .pdf
-        if file and file.filename.endswith('.pdf'):
+        # Verifica se o arquivo existe e tem a extensão .pdf
+        if file and file.filename.lower().endswith('.pdf'):
             # Garante um nome de arquivo seguro
             filename = secure_filename(file.filename)
-
-            # Salva o arquivo na pasta de upload
+            # Define o caminho temporário onde o arquivo será salvo
             path = os.path.join(UPLOAD_FOLDER, filename)
+            # Salva o arquivo no servidor temporariamente
             file.save(path)
 
-            # Adiciona o PDF ao merger
-            merger.append(path)
+            try:
+                # Tenta abrir o arquivo com PyPDF2 para validar se é um PDF de verdade
+                with open(path, 'rb') as f:
+                    reader = PyPDF2.PdfReader(f)
+                    _ = len(reader.pages)  # Verifica se possui páginas
 
-    # Formata a data e hora de forma legível para criar o nome do arquivo final
+                # Se passou pela validação, adiciona ao merger
+                merger.append(path)
+                pdfs_validos += 1
+
+            except Exception:
+                # Remove o arquivo corrompido ou inválido
+                os.remove(path)
+                # Adiciona à lista de arquivos inválidos para exibir mensagem depois
+                arquivos_invalidos.append(filename)
+
+        else:
+            # Arquivos que não têm extensão .pdf
+            arquivos_invalidos.append(file.filename)
+
+    # Exibe uma mensagem flash para cada arquivo inválido detectado
+    for nome in arquivos_invalidos:
+        flash(f"❌ O arquivo '{nome}' não é um PDF válido e foi ignorado.")
+
+    # Se menos de dois arquivos válidos foram enviados,
+    # e não houve arquivos inválidos (já tratados com mensagens),
+    # então mostra mensagem genérica de erro
+    if pdfs_validos < 2:
+        if not arquivos_invalidos:
+            flash("⚠️ Envie pelo menos dois arquivos PDF válidos para juntar.")
+        return redirect(request.referrer or url_for('index'))
+
+    # Cria um nome único para o PDF de saída com base na data/hora
     data_formatada = datetime.now().strftime('%d-%m-%Y_%H-%M-%S')
     output_filename = f"juntado_{data_formatada}.pdf"
-
-    # Caminho onde o PDF final será salvo
     output_path = os.path.join(RESULT_FOLDER, output_filename)
 
-    # Salva o PDF final com todos os arquivos juntados
+    # Escreve o PDF final juntado
     merger.write(output_path)
     merger.close()
 
-    # Exibe uma mensagem de sucesso na próxima página renderizada
+    # Exibe mensagem de sucesso
     flash("✅ PDFs juntados com sucesso!")
 
-    # Redireciona para a página de download, passando o nome do arquivo
+    # Redireciona para a página que mostrará o link para baixar
     return redirect(url_for('download_page', filename=output_filename))
 
 
-# Rota que exibe a página HTML de download
+# Rota que exibe a página HTML com o link de download do arquivo gerado
 @app.route('/download/<filename>')
 def download_page(filename):
-    # Renderiza o template com o link para baixar o arquivo gerado
+    # Renderiza o template 'download.html' passando o nome do arquivo como variável
     return render_template('download.html', filename=filename)
 
 
-# Rota que envia o arquivo para download direto no navegador
+# Rota que permite baixar diretamente o arquivo PDF gerado
 @app.route('/baixar/<filename>')
 def baixar_pdf(filename):
-    # Monta o caminho completo do arquivo a ser baixado
+    # Monta o caminho completo até o arquivo no servidor
     path = os.path.join(RESULT_FOLDER, filename)
-
-    # Envia o arquivo como anexo para o navegador
+    # Envia o arquivo como anexo (força o download no navegador)
     return send_file(path, as_attachment=True)
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
