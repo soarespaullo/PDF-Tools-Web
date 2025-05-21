@@ -88,6 +88,7 @@ sudo apt install apache2 libapache2-mod-wsgi-py3 python3-venv
 cd /var/www/PDFTools
 python3 -m venv venv
 source venv/bin/activate
+chown -R $USER:$USER /var/www/PDFTools/venv/
 pip install -r requirements.txt
 ```
 
