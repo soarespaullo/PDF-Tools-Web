@@ -86,9 +86,9 @@ sudo apt install apache2 libapache2-mod-wsgi-py3 python3-venv
 
 ```bash
 cd /var/www/PDFTools
-python3 -m venv venv
+sudo python3 -m venv venv
 source venv/bin/activate
-chown -R $USER:$USER /var/www/PDFTools/venv/
+sudo chown -R $USER:$USER /var/www/PDFTools/venv/
 pip install -r requirements.txt
 ```
 
@@ -148,6 +148,7 @@ sudo systemctl reload apache2
 ### 6. Permissões (importantíssimo):
 
 ```bash
+sudo mkdir -p {uploads,results}
 sudo chown -R www-data:www-data /var/www/PDFTools/uploads /var/www/PDFTools/results
 sudo chmod -R 755 /var/www/PDFTools
 ```
@@ -182,6 +183,8 @@ reportlab
 fpdf
 pytesseract
 werkzeug
+bleach
+beautifulsoup4
 ```
 
 ---
