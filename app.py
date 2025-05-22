@@ -45,7 +45,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 # Garante que a pasta 'results' exista; se não existir, será criada
 os.makedirs(RESULT_FOLDER, exist_ok=True)
 
-# --- ROTA PRINCIPAL - EXIBE A PÁGINA INICIAL COM 0 FORMULÁRIO ---
+# --- ROTA: Exibir a Página Inicial com os Formulários ---
 @app.route('/')
 def index():
     return render_template('index.html')
