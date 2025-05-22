@@ -14,3 +14,5 @@ reportlab
 fpdf
 pytesseract
 werkzeug
+bleach
+beautifulsoup4
