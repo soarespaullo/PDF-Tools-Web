@@ -10,3 +10,7 @@ pandas==2.2.2
 openpyxl==3.1.2
 pdf2image==1.17.0
 pytesseract==0.3.10
+reportlab==3.6.12
+fpdf==1.7.2
+beautifulsoup4==4.12.2
+bleach==6.0.0
