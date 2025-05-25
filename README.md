@@ -87,7 +87,7 @@ sudo apt install apache2 libapache2-mod-wsgi-py3 python3-venv build-essential li
 ```bash
 cd /var/www/
 sudo git clone https://github.com/soarespaullo/PDFTools.git
-cd /var/www/PDFTools
+cd PDFTools
 sudo python3 -m venv venv
 source venv/bin/activate
 sudo chown -R $USER:$USER /var/www/PDFTools/venv/
