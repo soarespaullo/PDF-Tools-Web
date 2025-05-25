@@ -79,7 +79,7 @@ Acesse em: [http://localhost:5000](http://localhost:5000)
 
 ```bash
 sudo apt update
-sudo apt install apache2 libapache2-mod-wsgi-py3 python3-venv
+sudo apt install apache2 libapache2-mod-wsgi-py3 python3-venv weasyprint
 ```
 
 ### 2. Crie o ambiente virtual e instale os requisitos:
