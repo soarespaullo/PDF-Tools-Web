@@ -142,6 +142,7 @@ Crie o arquivo `/etc/apache2/sites-available/PDFTools.conf`:
 
 ```bash
 sudo a2ensite PDFTools
+sudo a2dissite 000-default.conf 
 sudo systemctl reload apache2
 ```
 
