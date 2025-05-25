@@ -122,7 +122,8 @@ Crie o arquivo `/etc/apache2/sites-available/PDFTools.conf`:
 ```apache
 <VirtualHost *:80>
     ServerName localhost
-    WSGIDaemonProcess PDFTools python-path=/var/www/PDFTools:/var/www/PDFTools/venv/lib/python3.10/site-packages
+
+    WSGIDaemonProcess PDFTools python-home=/var/www/PDFTools/venv python-path=/var/www/PDFTools
     WSGIProcessGroup PDFTools
     WSGIScriptAlias / /var/www/PDFTools/app.wsgi
 
