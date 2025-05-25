@@ -148,7 +148,7 @@ sudo systemctl reload apache2
 ### 6. Permissões (importantíssimo):
 
 ```bash
-sudo mkdir -p {uploads,results}
+sudo mkdir -p /var/www/PDFTools/{uploads,results}
 sudo chown -R www-data:www-data /var/www/PDFTools/uploads /var/www/PDFTools/results
 sudo chmod -R 755 /var/www/PDFTools
 ```
