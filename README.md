@@ -85,8 +85,8 @@ sudo apt install apache2 libapache2-mod-wsgi-py3 python3-venv build-essential li
 ### 2. Crie o ambiente virtual e instale os requisitos:
 
 ```bash
-sudo git clone https://github.com/soarespaullo/PDFTools.git
 cd /var/www/PDFTools
+sudo git clone https://github.com/soarespaullo/PDFTools.git
 sudo python3 -m venv venv
 source venv/bin/activate
 sudo chown -R $USER:$USER /var/www/PDFTools/venv/
