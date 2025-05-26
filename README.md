@@ -171,22 +171,22 @@ sudo chmod -R 755 /var/www/PDFTools
 ## 📦 Requisitos
 
 ```txt
-Flask==3.1.1
-PyMuPDF==1.23.7
-pdf2docx==0.5.6
-PyPDF2==3.0.1
-python-pptx==0.6.21
-Pillow==10.3.0
-weasyprint==61.2
-pdfplumber==0.10.2
-pandas==2.2.2
-openpyxl==3.1.2
-pdf2image==1.17.0
-pytesseract==0.3.10
-reportlab>=3.6,<3.7   # ⚠️ sem travar em 3.6.12 para evitar erro de build
-fpdf==1.7.2
-beautifulsoup4==4.12.2
-bleach==6.0.0
+Flask
+PyMuPDF
+pdf2docx
+PyPDF2
+python-pptx
+Pillow
+weasyprint
+pdfplumber
+pandas
+openpyxl
+pdf2image
+pytesseract
+reportlab
+fpdf
+beautifulsoup4
+bleach
 ```
 
 ---
