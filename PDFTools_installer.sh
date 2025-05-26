@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # PDFTOOLS - Script de instalação e configuração automática
 #
