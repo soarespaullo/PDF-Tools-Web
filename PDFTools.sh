@@ -34,7 +34,7 @@ banner() {
   echo '$$ |      $$ |  $$ |$$ |         $$ |$$ |  $$ |$$ |  $$ |$$ | \____$$\ '
   echo '$$ |      $$$$$$$  |$$ |         $$ |\$$$$$$  |\$$$$$$  |$$ |$$$$$$$  |'
   echo '\__|      \_______/ \__|         \__| \______/  \______/ \__|\_______/ '
-  echo -e "${YELLOW}                 Instalador Interativo para o PDFTOOLS${NC}"
+  echo -e "${YELLOW}                 Instalador Interativo para o PDFTools${NC}"
   echo
 }
 
