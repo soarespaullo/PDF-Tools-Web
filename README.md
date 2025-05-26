@@ -117,7 +117,7 @@ from app import app as application
 
 ### 4. Configure o Apache:
 
-Crie o arquivo `/etc/apache2/sites-available/PDFTools.conf`:
+Crie o arquivo `sudo vim /etc/apache2/sites-available/PDFTools.conf`
 
 ```apache
 <VirtualHost *:80>
