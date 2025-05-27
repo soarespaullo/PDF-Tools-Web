@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# PDFTOOLS - Script de instalação e configuração automática
+# PDFTools - Script de instalação e configuração automática
 #
 # Descrição:
 # Script interativo para instalar dependências de sistema,
@@ -12,7 +12,7 @@
 # Data: 2025-05-25
 #
 # Uso:
-# ./PDFTools_installer.sh
+# ./PDFTools.sh
 #
 # Observação:
 # Execute este script com permissões de sudo para instalações e configurações.
