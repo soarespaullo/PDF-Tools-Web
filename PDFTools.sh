@@ -19,6 +19,7 @@
 #
 # Cores
 CYAN='\033[0;36m'
+MAGENTA='\033[0;35m'
 YELLOW='\033[1;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -128,10 +129,10 @@ menu() {
   while true; do
     banner
     echo -e "${CYAN}Escolha uma opção:${NC}"
-    echo "1) Instalar dependências do sistema"
-    echo "2) Configurar e instalar PDFTools"
-    echo "3) Sair"
-    read -rp "Opção: " opt
+    echo -e "${MAGENTA}1) Instalar dependências do sistema${NC}"
+    echo -e "${MAGENTA}2) Configurar e instalar PDFTools${NC}"
+    echo -e "${MAGENTA}3) Sair${NC}"
+    read -rp "$(echo -e "${MAGENTA}Opção:${NC} ")" opt
     case $opt in
       1) install_dependencies ;;
       2) setup_pdf_tools ;;
