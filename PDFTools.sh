@@ -140,7 +140,7 @@ menu() {
       *) echo -e "${RED}Opção inválida. Tente novamente${NC}" ;;
     esac
     echo
-    read -rp "Pressione ENTER para voltar ao menu..."
+    read -rp "$(echo -e "${CYAN}Pressione ${MAGENTA}ENTER ${CYAN}para voltar ao menu...${NC} ")"
     clear
   done
 }
