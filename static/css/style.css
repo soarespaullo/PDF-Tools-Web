@@ -1,106 +1,141 @@
- :root {
-      --primary: #2c3e50;
-      --accent: #3498db;
-      --bg: #f4f6f8;
-      --text: #333;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Quicksand', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    header {
-      background: var(--primary);
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    main {
-      flex: 1;
-      padding: 2rem;
-    }
-    .tools {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card i {
-      font-size: 2.5rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-    .card h3 {
-      margin: 0.5rem 0;
-    }
-    .card p {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 1rem;
-    }
-    form input, form textarea {
-      margin-bottom: 0.5rem;
-      width: 100%;
-    }
-    .btn {
-      background: var(--accent);
-      color: white;
-      padding: 0.6rem 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-    .btn:hover {
-      background: #2980b9;
-    }
-    footer {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 1.2rem 1rem;
-      margin-top: auto;
-    }
-    .social a {
-      color: white;
-      font-size: 1.4rem;
-      margin: 0 10px;
-    }
-  
-    input[type="file"] {
-      background-color: #ecf0f1;
-      border: 2px dashed var(--accent);
-      border-radius: 8px;
-      padding: 10px;
-      font-family: inherit;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    input[type="file"]:hover {
-      background-color: #d6eaf8;
-    }
+/* ==============================
+   Variáveis de Cor e Reset Geral
+============================== */
+:root {
+  --primary: #2c3e50;
+  --accent: #3498db;
+  --bg: #f4f6f8;
+  --text: #333;
+}
 
-/* PDFTools */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==============================
+   Layout Principal
+============================== */
+header {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  margin-top: auto;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
+   Cards de Ferramentas
+============================== */
+.tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card i {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* ==============================
+   Botões e Formulários
+============================== */
+form input,
+form textarea {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #2980b9;
+}
+
+/* Estilo do input[type="file"] */
+input[type="file"] {
+  background-color: #ecf0f1;
+  border: 2px dashed var(--accent);
+  border-radius: 8px;
+  padding: 10px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+  background-color: #d6eaf8;
+}
+
+/* ==============================
+   Cabeçalho com Ícone (PDFTools)
+============================== */
 h1 {
   display: flex;
   justify-content: center;
@@ -110,11 +145,13 @@ h1 {
 
 h1 i {
   font-size: 1.5em;
-  color: OrangeRed; /* Ou outra cor desejada */
+  color: OrangeRed;
 }
 
-/* Mensagem do Flash*/
- #flash-container {
+/* ==============================
+   Flash Messages
+============================== */
+#flash-container {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -147,29 +184,35 @@ h1 i {
 }
 
 @keyframes fadeInOut {
-  0%   { opacity: 0; transform: translateY(-10px); }
-  10%  { opacity: 1; transform: translateY(0); }
-  90%  { opacity: 1; }
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
   100% { opacity: 0; transform: translateY(-10px); }
 }
 
-/* Modo Escuro */
-
+/* ==============================
+   Modo Escuro
+============================== */
 body.dark-mode {
   background-color: #121212;
   color: #f0f0f0;
 }
 
-body.dark-mode .card {
+body.dark-mode header,
+body.dark-mode footer {
   background-color: #1e1e1e;
+}
+
+body.dark-mode .card {
+  background-color: #2a2a2a;
   color: #fff;
 }
 
 body.dark-mode a {
   color: #66ccff;
-} 
+}
 
-/* Estilo para campos em modo escuro */
+/* Campos e inputs no modo escuro */
 body.dark-mode input,
 body.dark-mode textarea,
 body.dark-mode select {
@@ -200,6 +243,7 @@ body.dark-mode button:hover {
   background-color: #444;
 }
 
+/* Botão para alternar o modo escuro */
 #darkModeToggle {
   background: none;
   border: none;
@@ -214,5 +258,80 @@ body.dark-mode button:hover {
 
 #darkModeToggle:hover {
   transform: scale(1.2);
+}
+
+/* Nome no rodapé (ex: autor) */
+body.dark-mode .author-link {
+  color: white;
+}
+
+/* Estilo input[type="file"] no modo escuro */
+body.dark-mode input[type="file"] {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border: 2px dashed #66ccff;
+}
+
+body.dark-mode input[type="file"]:hover {
+  background-color: #333;
+  border-color: #88ddff;
+}
+
+/* Link de voltar (modo escuro) */
+body.dark-mode .back-link {
+  color: #fff;
+}
+
+body.dark-mode .back-link:hover {
+  text-decoration: underline;
+  color: #ccc;
+}
+
+/* ==============================
+   Página de Downloads
+============================== */
+.download-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.download-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.download-container .button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.download-container .button:hover {
+  background-color: #45a049;
+}
+
+.download-container .back-link {
+  display: block;
+  margin-top: 1.5rem;
+  color: #555;
+  text-decoration: none;
+}
+
+.download-container .back-link:hover {
+  text-decoration: underline;
+}
+
+/* Lista de links para downloads em páginas divididas */
+.lista-downloads {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-downloads li {
+  margin: 10px 0;
 }
 

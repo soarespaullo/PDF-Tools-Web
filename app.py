@@ -55,8 +55,18 @@ def index():
 # --- ROTA: Juntar PDFs ---
 @app.route('/juntar', methods=['POST'])
 def juntar_pdf():
+    # Verifica se o campo "pdfs" está presente no formulário
+    if "pdfs" not in request.files:
+        flash("⚠️ Nenhum arquivo foi enviado. Selecione pelo menos dois arquivos PDF.")
+        return redirect(request.referrer or url_for('index'))
+
     # Obtém todos os arquivos enviados no campo "pdfs" (com multiple no HTML)
     arquivos = request.files.getlist("pdfs")
+
+    # Verifica se todos os arquivos têm nome vazio (nenhum foi selecionado)
+    if not any(file.filename for file in arquivos):
+        flash("⚠️ Nenhum arquivo foi selecionado. Por favor, envie ao menos dois PDFs.")
+        return redirect(request.referrer or url_for('index'))
 
     # Cria o objeto responsável por juntar os PDFs
     merger = PyPDF2.PdfMerger()

@@ -4,50 +4,59 @@
   <meta charset="UTF-8">
   <title>{% block title %}PDFTools{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ferramenta online para converter, editar e proteger arquivos PDF.">
+  <meta name="author" content="Paulo Soares">
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}" type="image/x-icon">
+
+  <!-- Tipografia e ícones -->
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Estilos principais -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-  <link rel="icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}" type="image/x-icon">
   {% block extra_css %}{% endblock %}
 </head>
 <body>
   <header>
-    <h1><i class="ri-file-pdf-line"></i> PDFTools</h1>
+    <h1><i class="ri-file-pdf-line" aria-hidden="true"></i> PDFTools</h1>
     <p>Converta, edite e proteja seus PDFs com facilidade</p>
+    <button id="darkModeToggle" aria-label="Alternar modo escuro"><i id="darkModeIcon" class="ri-moon-line"></i></button>
   </header>
 
+  <!-- Mensagens flash -->
   {% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <div id="flash-container">
-      {% for msg in messages %}
-        <div class="flash-message">
-          {{ msg }}
-          <span class="close-btn" onclick="this.parentElement.remove();">&times;</span>
-        </div>
-      {% endfor %}
-    </div>
-    <script>
-      setTimeout(() => {
-        const flash = document.getElementById("flash-container");
-        if (flash) flash.remove();
-      }, 6000); // some automaticamente após 6 segundos
-    </script>
-  {% endif %}
-{% endwith %}
+    {% if messages %}
+      <div id="flash-container">
+        {% for msg in messages %}
+          <div class="flash-message">
+            {{ msg }}
+            <span class="close-btn" onclick="this.parentElement.remove();" aria-label="Fechar alerta">&times;</span>
+          </div>
+        {% endfor %}
+      </div>
+      <script>
+        setTimeout(() => {
+          const flash = document.getElementById("flash-container");
+          if (flash) flash.remove();
+        }, 6000);
+      </script>
+    {% endif %}
+  {% endwith %}
 
+  <!-- Conteúdo principal -->
   <main>
     {% block content %}{% endblock %}
   </main>
 
+  <!-- Rodapé -->
   <footer>
-    <div class="social">
-      <a href="https://github.com/soarespaullo" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i></a>
-      <a href="https://www.linkedin.com/in/soarespaullo/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-box-fill"></i></a>
-      <a href="https://soarespaullo.github.io/" target="_blank" rel="noopener noreferrer"><i class="ri-global-line"></i></a>
-      <a href="https://t.me/soarespaullo" target="_blank" rel="noopener noreferrer"><i class="ri-telegram-line"></i></a>
-    </div>
     <p>© 2025 <strong>PDFTools</strong>. Todos os direitos reservados.</p>
+    <p>Feito com ❤️ por <a href="https://github.com/soarespaullo" class="author-link" target="_blank" rel="noopener noreferrer"><strong>Paulo Soares</strong></a>.</p>
   </footer>
+
+  {% block extra_js %}{% endblock %}
+  <script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
 </body>
 </html>
-
