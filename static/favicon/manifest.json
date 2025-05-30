@@ -1,0 +1,20 @@
+{
+  "name": "PDFTools", // Nome completo do aplicativo, usado em contextos como a tela de instalação.
+  "short_name": "PDFTools", // Nome curto, exibido abaixo do ícone no celular ou menu.
+  "start_url": "/", // URL inicial ao abrir o app instalado; geralmente a página principal.
+  "display": "standalone", // Faz o app parecer nativo (sem barra de endereço do navegador).
+  "background_color": "#ffffff", // Cor de fundo da tela de carregamento (splash screen).
+  "theme_color": "#f5f5f5", // Cor usada na barra superior do navegador e temas do sistema.
+  "icons": [
+    {
+      "src": "/static/favicon/icon-192.png", // Ícone em 192x192 pixels (recomendado para Android).
+      "sizes": "192x192", // Tamanho real da imagem.
+      "type": "image/png" // Tipo do arquivo.
+    },
+    {
+      "src": "/static/favicon/icon-512.png", // Ícone em 512x512 pixels (necessário para instalação).
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
