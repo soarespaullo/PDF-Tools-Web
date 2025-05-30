@@ -47,7 +47,6 @@ PDFTools/
 ├── static/                     # Arquivos estáticos (CSS, JS, imagens)
 │   ├── css/
 │   │   ├── style.css           # Estilos principais globais
-│   │   └── download.css        # Estilos específicos para páginas de download
 │   │
 │   ├── js/
 │   │   └── darkmode.js         # Script para alternar entre modo claro e escuro
