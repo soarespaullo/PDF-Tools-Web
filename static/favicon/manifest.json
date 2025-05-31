@@ -7,12 +7,12 @@
   "theme_color": "#f5f5f5", // Cor usada na barra superior do navegador e temas do sistema.
   "icons": [
     {
-      "src": "/static/favicon/icon-192.png", // Ícone em 192x192 pixels (recomendado para Android).
+      "src": "/static/favicon/android-chrome-192x192", // Ícone em 192x192 pixels (recomendado para Android).
       "sizes": "192x192", // Tamanho real da imagem.
       "type": "image/png" // Tipo do arquivo.
     },
     {
-      "src": "/static/favicon/icon-512.png", // Ícone em 512x512 pixels (necessário para instalação).
+      "src": "/static/favicon/android-chrome-512x512.png", // Ícone em 512x512 pixels (necessário para instalação).
       "sizes": "512x512",
       "type": "image/png"
     }
