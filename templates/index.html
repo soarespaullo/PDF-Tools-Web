@@ -4,6 +4,24 @@
   <meta charset="utf-8"/>
   <title>PDFTools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- SEO -->
+  <meta name="description" content="Edite, converta, divida, una e proteja seus arquivos PDF sem precisar instalar nada. Tudo 100% online, rápido e fácil de usar." />
+  <meta name="author" content="Paulo Soares">
+
+  <!-- Open Graph (para Facebook, LinkedIn, etc) -->
+  <meta property="og:title" content="PDFTools – Converta, edite e proteja seus PDFs com facilidade" />
+  <meta property="og:description" content="Edite, converta, divida, una e proteja seus arquivos PDF sem precisar instalar nada. Tudo 100% online, rápido e fácil de usar." />
+  <meta property="og:url" content="{{ request.url }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{{ url_for('static', filename='imagens/capa.jpg', _external=True) }}" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PDFTools – Converta, edite e proteja seus PDFs com facilidade" />
+  <meta name="twitter:description" content="Edite, converta, divida, una e proteja seus arquivos PDF sem precisar instalar nada. Tudo 100% online, rápido e fácil de usar." />
+  <meta name="twitter:image" content="{{ url_for('static', filename='imagens/capa.jpg', _external=True) }}" />
+
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet"/>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
