@@ -206,6 +206,8 @@ Feito com ❤️ por [**Paulo Soares**](https://soarespaullo.github.io/) – `Pu
 
 - 💻 [**GitHub**](https://github.com/soarespaullo)
 
+- 🐞 [**NotABug**](https://notabug.org/soarespaullo)
+
 ---
 
 ## 📚 Recursos e Referências
